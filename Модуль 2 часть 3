@@ -1,0 +1,106 @@
+number = int(input("Введите число от 1 до 100: "))
+
+if 1 <= number <= 100:
+    if number % 15 == 0:
+        print("Fizz Buzz")
+    elif number % 3 == 0:
+        print("Fizz")
+    elif number % 5 == 0:
+        print("Buzz")
+    else:
+        print(number)
+else:
+    print("Ошибка: число должно быть от 1 до 100")
+
+
+
+
+
+number = float(input("Введите число: "))
+power = int(input("Введите степень (0-7): "))
+
+if 0 <= power <= 7:
+    result = number ** power
+    print(f"{number} в степени {power} = {result}")
+else:
+    print("Ошибка: степень должна быть от 0 до 7")
+
+
+
+
+
+
+
+
+
+# Словарь с тарифами (откуда -> куда: множитель)
+tariffs = {
+    "MTC -> MTC": 1.0,
+    "MTC -> Билайн": 1.5,
+    "MTC -> Мегафон": 1.3,
+    "Билайн -> MTC": 1.4,
+    "Билайн -> Билайн": 1.0,
+    "Билайн -> Мегафон": 1.6,
+    "Мегафон -> MTC": 1.2,
+    "Мегафон -> Билайн": 1.5,
+    "Мегафон -> Мегафон": 1.0
+}
+
+base_cost = float(input("Введите базовую стоимость разговора: "))
+print("Доступные операторы: MTC, Билайн, Мегафон")
+from_operator = input("С какого оператора звоните? ")
+to_operator = input("На какой оператор звоните? ")
+
+key = f"{from_operator} -> {to_operator}"
+if key in tariffs:
+    total_cost = base_cost * tariffs[key]
+    print(f"Стоимость разговора: {total_cost:.2f} руб.")
+else:
+    print("Ошибка: неверно указаны операторы")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BASE_SALARY = 200
+BONUS = 200
+
+def calculate_salary(sales):
+    if sales < 500:
+        return BASE_SALARY + sales * 0.03
+    elif 500 <= sales < 1000:
+        return BASE_SALARY + sales * 0.05
+    else:
+        return BASE_SALARY + sales * 0.08
+
+# Ввод данных
+sales = []
+for i in range(3):
+    s = float(input(f"Введите уровень продаж менеджера {i+1}: "))
+    sales.append(s)
+
+# Расчет зарплат
+salaries = [calculate_salary(s) for s in sales]
+
+# Находим лучшего менеджера
+max_salary_index = salaries.index(max(salaries))
+salaries[max_salary_index] += BONUS
+
+# Вывод результатов
+print("\nРезультаты:")
+for i in range(3):
+    status = " (лучший менеджер + премия)" if i == max_salary_index else ""
+    print(f"Менеджер {i+1}: продажи ${sales[i]:.2f}, зарплата ${salaries[i]:.2f}{status}")
