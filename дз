@@ -1,0 +1,94 @@
+# Ввод трёх чисел
+num1 = float(input("Введите первое число: "))
+num2 = float(input("Введите второе число: "))
+num3 = float(input("Введите третье число: "))
+
+# Выбор операции
+choice = input("Выберите операцию (сумма или произведение): ").lower()
+
+if choice == "сумма":
+    result = num1 + num2 + num3
+    print(f"Сумма чисел: {result}")
+elif choice == "произведение":
+    result = num1 * num2 * num3
+    print(f"Произведение чисел: {result}")
+else:
+    print("Неверный выбор операции")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Ввод трёх чисел
+num1 = float(input("Введите первое число: "))
+num2 = float(input("Введите второе число: "))
+num3 = float(input("Введите третье число: "))
+
+# Выбор операции
+choice = input("Выберите операцию (максимум, минимум или среднее): ").lower()
+
+if choice == "максимум":
+    result = max(num1, num2, num3)
+    print(f"Максимальное число: {result}")
+elif choice == "минимум":
+    result = min(num1, num2, num3)
+    print(f"Минимальное число: {result}")
+elif choice == "среднее":
+    result = (num1 + num2 + num3) / 3
+    print(f"Среднее арифметическое: {result:.2f}")
+else:
+    print("Неверный выбор операции")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Ввод количества метров
+meters = float(input("Введите количество метров: "))
+
+# Выбор единицы измерения
+choice = input("Выберите перевод (мили, дюймы или ярды): ").lower()
+
+if choice == "мили":
+    miles = meters * 0.000621371
+    print(f"{meters} метров = {miles} миль")
+elif choice == "дюймы":
+    inches = meters * 39.3701
+    print(f"{meters} метров = {inches} дюймов")
+elif choice == "ярды":
+    yards = meters * 1.09361
+    print(f"{meters} метров = {yards} ярдов")
+else:
+    print("Неверный выбор единицы измерения")
+
+
+
+
+
+
+
+
