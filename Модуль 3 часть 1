@@ -1,0 +1,52 @@
+import turtle
+
+def draw_diamonds(t):
+    """Рисуем бубны (красные ромбы)"""
+    t.color("red")
+    t.begin_fill()
+    for _ in range(2):
+        t.forward(40)
+        t.left(45)
+        t.forward(40)
+        t.left(135)
+    t.end_fill()
+
+def draw_hearts(t):
+    """Рисуем черви (красное сердце)"""
+    t.color("red")
+    t.begin_fill()
+    t.left(50)
+    t.forward(45)
+    t.circle(20, 200)
+    t.right(140)
+    t.circle(20, 200)
+    t.forward(45)
+    t.end_fill()
+    t.setheading(0)
+
+def main():
+    screen = turtle.Screen()
+    screen.title("Карточные масти")
+    screen.bgcolor("white")
+    
+    t = turtle.Turtle()
+    t.speed(3)
+    t.pensize(2)
+    
+    # Рисуем бубны
+    t.penup()
+    t.goto(-100, 0)
+    t.pendown()
+    draw_diamonds(t)
+    
+    # Рисуем черви
+    t.penup()
+    t.goto(100, 0)
+    t.pendown()
+    draw_hearts(t)
+    
+    t.hideturtle()
+    screen.mainloop()
+
+if __name__ == "__main__":
+    main()
